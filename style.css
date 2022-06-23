@@ -7,6 +7,13 @@
 body {
     background-color: #E5E5E5;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+span {
+    font-weight: 700;
 }
 
 .top-bar {
@@ -41,8 +48,9 @@ body {
     min-height: 40px;
     padding: 0 9px;
     width: 100%;
-    display: inline-block;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .mensagem.entrada {
@@ -72,7 +80,6 @@ body {
 
 input {
     font-size: 18px;
-    font-weight: 400;
     border: hidden;
 }
 
