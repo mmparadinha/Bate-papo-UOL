@@ -36,13 +36,12 @@ span {
 .main {
     margin-top: 106px;
     width: 100%;
-    background-color: blue;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.mensagem {
+.message {
     background-color: #FFFFFF;
     border-radius: 2px;
     min-height: 40px;
@@ -53,15 +52,11 @@ span {
     justify-content: center;
 }
 
-.mensagem.entrada {
+.message.status {
     background-color: #DCDCDC;
 }
 
-.mensagem.saida {
-    background-color: #DCDCDC;
-}
-
-.mensagem.privada {
+.message.private {
     background-color: #FFDEDE;
 }
 
