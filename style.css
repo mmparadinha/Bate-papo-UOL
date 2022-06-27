@@ -12,8 +12,12 @@ body {
     word-break: break-all;
 }
 
-span {
+span.user {
     font-weight: 700;
+}
+
+span.time {
+    color: gray;
 }
 
 .top-bar {
@@ -44,8 +48,7 @@ span {
 .message {
     background-color: #FFFFFF;
     border-radius: 2px;
-    min-height: 40px;
-    padding: 0 9px;
+    padding: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;

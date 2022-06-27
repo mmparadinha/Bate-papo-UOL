@@ -39,27 +39,28 @@ function online() {
 
 function getMessagesOK(chat) {
     let main = document.querySelector(".main");
-    let lastMessage;
+    main.innerHTML = "";
     chat = chat.data;
     for (const element of chat) {
         if (element.type === "status") {
             main.innerHTML +=
                 `<div class="message status">
-            <p>${element.time}<span>${element.from}</span> ${element.text}</p>
+            <p><span class="time">(${element.time})</span> <span class="user">${element.from}</span> ${element.text}</p>
         </div>`
         } else if (element.type === "message") {
             main.innerHTML +=
                 `<div class="message">
-            <p>${element.time}<span>${element.from}</span> para <span>${element.to}</span>: ${element.text}</p>
+            <p><span class="time">(${element.time})</span> <span class="user">${element.from}</span> para <span class="user">${element.to}</span>: ${element.text}</p>
             </div>`
         } else if (element.type === "private_message" && element.to === user.name) {
             main.innerHTML +=
                 `<div class="message private">
-            <p>${element.time}<span>${element.from}</span> reservadamente para <span>${element.to}</span>: ${element.text}</p>
+            <p><span class="time">(${element.time})</span> <span class="user">${element.from}</span> reservadamente para <span class="user">${element.to}</span>: ${element.text}</p>
             </div>`
         }
     }
-    //lastMessage.scrollIntoView(); problema é fazer selecionar a última mensagem
+    let lastMessage = document.querySelectorAll(".message")
+    lastMessage[(lastMessage.length-1)].scrollIntoView();
     console.log('chat atualizado');
 }
 
@@ -91,7 +92,6 @@ function sendMessage() {
         text: document.querySelector('input').value,
         type: "message"
     }
-    console.log(message)
     promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", message);
     promise.then(sendMessageOK);
     promise.catch(sendMessageNOK);
